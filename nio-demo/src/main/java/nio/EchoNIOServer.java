@@ -14,7 +14,7 @@ import java.util.Set;
 /**
  * Advantage of Nio server is that one thread can observe many clients.
  * Applicable only when socket isn't closed after response is sent(http).
- * Example: responsive-ui, web-games
+ * Example: chat, responsive-ui, web-games
  */
 public class EchoNIOServer {
     public final static int PORT = 8081;
@@ -79,7 +79,8 @@ public class EchoNIOServer {
         channel.configureBlocking(false);
         System.out.println("Connected to: " + channel.socket().getRemoteSocketAddress());
 
-        channel.register(selector, SelectionKey.OP_READ);
+        final int operations = SelectionKey.OP_CONNECT | SelectionKey.OP_READ | SelectionKey.OP_WRITE;
+        channel.register(selector, operations);
     }
 
     /**
