@@ -90,6 +90,7 @@ public class EchoNIOServer {
         final ByteBuffer buffer = ByteBuffer.allocate(256);
         final SocketChannel client = (SocketChannel) key.channel();
         client.read(buffer);
+        client.configureBlocking(false);
         if (new String(buffer.array()).trim().equals(CLOSE_CONNECTION_SIGNAL)) {
             final SocketAddress remoteAddress = client.getRemoteAddress();
             client.close();
