@@ -4,4 +4,5 @@ include(':io-demo')
 include 'nio-demo'
 project(':io-demo').projectDir = file('io-demo')
 project(':nio-demo').projectDir = file('nio-demo')
+include 'gc'
 
