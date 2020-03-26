@@ -15,6 +15,10 @@ import java.util.Set;
  * Advantage of Nio server is that one thread can observe many clients.
  * Applicable only when socket isn't closed after response is sent(http).
  * Example: chat, responsive-ui, web-games
+ * <p>
+ * Non blocking: (Socket example)
+ * 1. read() doesn't block if some bytes not available(e.g. network issues), it reads as many bytes as available.
+ * 2. write() doesn't wait for client to accept all bytes, it writes as many as client can accept.
  */
 public class EchoNIOServer {
     public final static int PORT = 8081;
