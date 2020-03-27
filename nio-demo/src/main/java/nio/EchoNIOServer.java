@@ -19,6 +19,8 @@ import java.util.Set;
  * Non blocking: (Socket example)
  * 1. read() doesn't block if some bytes not available(e.g. network issues), it reads as many bytes as available.
  * 2. write() doesn't wait for client to accept all bytes, it writes as many as client can accept.
+ * <p>
+ * Netty server is build on NIO
  */
 public class EchoNIOServer {
     public final static int PORT = 8081;
