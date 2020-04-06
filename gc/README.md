@@ -1,5 +1,8 @@
 ##Garbage collection(GC) tuning
 
+####Roots
+Static members, thread stack's references, active threads, JNI methods arguments
+
 ####Serial
 1. -Xms и -Xmx можно настроить начальный и максимально допустимый размер кучи соответственно.
 2. -XX:MinHeapFreeRatio=? и -XX:MaxHeapFreeRatio=?, которые задают минимальную и максимальную долю свободного места в каждом поколении,     при достижении которой размер поколения будет автоматически увеличен или уменьшен соответственно(чтобы вышеупомянутые условия             были удовлетворены).
